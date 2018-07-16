@@ -1,7 +1,7 @@
 all: libkernel.a
 
-libkernel.a: kernel.o isr_handler.o
-	$(AR) rcs libkernel.a kernel.o isr_handler.o
+libkernel.a: kernel.o inline.o isr_handler.o
+	$(AR) rcs libkernel.a kernel.o inline.o isr_handler.o
 
 kernel.o: kernel.c
 	$(CC) $(CFLAGS) -c -o kernel.o kernel.c

@@ -18,7 +18,7 @@ ENDSTRUC
     mov dword [ENTRY + IdtEntry.baseLow], eax; Base low
     mov dword [ENTRY + IdtEntry.sel], 0x08; Selector
     mov byte [ENTRY + IdtEntry.always0], 0; Always zero
-    mov byte [ENTRY + IdtEntry.flags], 0x8e; flags
+    mov byte [ENTRY + IdtEntry.flags], ( 0x8e | 0x60 ); flags
 
     mov eax, BASE
     shr eax, 26
@@ -182,6 +182,7 @@ section .text
         popa                     ; Pops edi,esi,ebp...
         add esp, 8     ; Cleans up the pushed error code and pushed ISR number
         sti
+        iret
 
     ; This is our common IRQ stub. It saves the processor state, sets
     ; up for kernel mode segments, calls the C-level fault handler,

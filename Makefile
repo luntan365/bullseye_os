@@ -4,7 +4,7 @@ export ASM=nasm
 export ASMFLAGS=-felf32
 export BOCHS=bochs
 export CC=$(ARCH)-gcc
-export CFLAGS=-std=gnu99 -ffreestanding -O2
+export CFLAGS=-std=gnu99 -ffreestanding -O2 -I$(shell pwd)/include
 QEMU=qemu-system-i386
 #QEMU=qemu-system-i386 -d cpu_reset
 
