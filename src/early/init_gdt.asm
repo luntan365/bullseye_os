@@ -1,3 +1,5 @@
+; https://stackoverflow.com/a/43171871/5673558
+
 global kernel_init_gdt
 
 ; GDT with a NULL Descriptor, a 32-Bit code Descriptor

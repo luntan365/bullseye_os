@@ -7,9 +7,11 @@ section .text
 
     enter_protected_mode:
         extern kernel_init_gdt
+        extern kernel_init_idt
         call disable_interrupts
         call enable_a20
         call kernel_init_gdt
+        call kernel_init_idt
         call enable_nmi
         ret
 
