@@ -66,8 +66,8 @@ _start:
 	;lgdt [gdtr] ; Load GDT register with start address of GDT
 	;mov eax, cr0
 	;or al, 1 ; Set (Protection enable bit in Control Register 0)
-    extern kernel_early_main
-    call kernel_early_main
+	extern kernel_early_main
+	call kernel_early_main
  
 	; Enter the high-level kernel. The ABI requires the stack is 16-byte
 	; aligned at the time of the call instruction (which afterwards pushes
