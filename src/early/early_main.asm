@@ -1,4 +1,6 @@
 global kernel_early_main
+extern kernel_init_gdt
+extern kernel_init_idt
 
 section .text
     kernel_early_main:
@@ -6,8 +8,6 @@ section .text
         ret
 
     enter_protected_mode:
-        extern kernel_init_gdt
-        extern kernel_init_idt
         call disable_interrupts
         call enable_a20
         call kernel_init_gdt
