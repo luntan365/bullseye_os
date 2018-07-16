@@ -18,8 +18,16 @@ section .text
         call disable_nmi
         ret
 
-    enable_a20:
-        ret
+    enable_a20: ; Fast A20 Gate
+        in al, 0x92
+        test al, 2
+        jnz .end
+        or al, 2
+        and al, 0xFE
+        out 0x92, al
+        jmp .end
+        .end:
+            ret
 
     enable_nmi:
         in al, 0x70

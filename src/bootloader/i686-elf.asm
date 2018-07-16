@@ -1,3 +1,5 @@
+global start
+
 ; Declare constants for the multiboot header.
 MBALIGN  equ  1 << 0            ; align loaded modules on page boundaries
 MEMINFO  equ  1 << 1            ; provide memory map
@@ -39,6 +41,9 @@ stack_top:
 section .text
 global _start:function (_start.end - _start)
 _start:
+	;mov ax, 0x7c0 
+	;mov ds, ax
+
 	; The bootloader has loaded us into 32-bit protected mode on a x86
 	; machine. Interrupts are disabled. Paging is disabled. The processor
 	; state is as defined in the multiboot standard. The kernel has full
@@ -53,6 +58,10 @@ _start:
 	; To set up a stack, we set the esp register to point to the top of our
 	; stack (as it grows downwards on x86 systems). This is necessarily done
 	; in assembly as languages such as C cannot function without a stack.
+	;mov eax, 0
+	;mov ds, eax
+	;ov eax, stack_top
+	;mov ss, eax
 	mov esp, stack_top
  
 	; This is a good place to initialize crucial processor state before the
@@ -92,4 +101,4 @@ _start:
 	cli
 .hang:	hlt
 	jmp .hang
-.end:
+.end
