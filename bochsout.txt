@@ -33,39 +33,39 @@
 00000000000i[      ]   Sound support: no
 00000000000i[      ]   USB support: UHCI
 00000000000i[      ]   VGA extension support: vbe cirrus
-00000000000i[MEM0  ] allocated memory at 0x119b0a000. after alignment, vector=0x119b0a000
+00000000000i[MEM0  ] allocated memory at 0x115369000. after alignment, vector=0x115369000
 00000000000i[MEM0  ] 128.00MB
 00000000000i[MEM0  ] mem block size = 0x00020000, blocks=1024
 00000000000i[MEM0  ] rom at 0xfffe0000/131072 ('/usr/local/Cellar/bochs/2.6.9_1/share/bochs/BIOS-bochs-latest')
-00000000000i[      ] lt_dlhandle is 0x7fc138d65a60
+00000000000i[      ] lt_dlhandle is 0x7fb852fadf70
 00000000000i[PLUGIN] loaded plugin libbx_hdimage.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d65e00
+00000000000i[      ] lt_dlhandle is 0x7fb855065740
 00000000000i[PLUGIN] loaded plugin libbx_pci.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d66290
+00000000000i[      ] lt_dlhandle is 0x7fb855065af0
 00000000000i[PLUGIN] loaded plugin libbx_pci2isa.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d66ba0
+00000000000i[      ] lt_dlhandle is 0x7fb855065ba0
 00000000000i[PLUGIN] loaded plugin libbx_usb_uhci.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d686c0
+00000000000i[      ] lt_dlhandle is 0x7fb8550679b0
 00000000000i[PLUGIN] loaded plugin libbx_acpi.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d68760
+00000000000i[      ] lt_dlhandle is 0x7fb852fae4f0
 00000000000i[PLUGIN] loaded plugin libbx_cmos.so
-00000000000i[      ] lt_dlhandle is 0x7fc13b084af0
+00000000000i[      ] lt_dlhandle is 0x7fb855067a10
 00000000000i[PLUGIN] loaded plugin libbx_dma.so
-00000000000i[      ] lt_dlhandle is 0x7fc13b085090
+00000000000i[      ] lt_dlhandle is 0x7fb8550685b0
 00000000000i[PLUGIN] loaded plugin libbx_pic.so
-00000000000i[      ] lt_dlhandle is 0x7fc13b085690
+00000000000i[      ] lt_dlhandle is 0x7fb855068850
 00000000000i[PLUGIN] loaded plugin libbx_pit.so
-00000000000i[      ] lt_dlhandle is 0x7fc13b085b60
+00000000000i[      ] lt_dlhandle is 0x7fb855068d60
 00000000000i[PLUGIN] loaded plugin libbx_vga.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d694d0
+00000000000i[      ] lt_dlhandle is 0x7fb852fae820
 00000000000i[PLUGIN] loaded plugin libbx_floppy.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d69be0
+00000000000i[      ] lt_dlhandle is 0x7fb8550692e0
 00000000000i[PLUGIN] loaded plugin libbx_ioapic.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d69f40
+00000000000i[      ] lt_dlhandle is 0x7fb852d3d590
 00000000000i[PLUGIN] loaded plugin libbx_keyboard.so
-00000000000i[      ] lt_dlhandle is 0x7fc138d6a9a0
+00000000000i[      ] lt_dlhandle is 0x7fb855069850
 00000000000i[PLUGIN] loaded plugin libbx_harddrv.so
-00000000000i[      ] lt_dlhandle is 0x7fc13b085e20
+00000000000i[      ] lt_dlhandle is 0x7fb855069bd0
 00000000000i[PLUGIN] loaded plugin libbx_pci_ide.so
 00000000000i[PLUGIN] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV   ] i440FX PMC present at device 0, function 0
@@ -73,7 +73,7 @@
 00000000000i[DEV   ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[PLUGIN] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS  ] Using local time for initial clock
-00000000000i[CMOS  ] Setting initial clock to: Mon Jul 16 12:42:42 2018 (time0=1531759362)
+00000000000i[CMOS  ] Setting initial clock to: Mon Jul 16 14:46:39 2018 (time0=1531766799)
 00000000000i[PLUGIN] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA   ] channel 4 used by cascade
 00000000000i[PLUGIN] init_dev of 'pic' plugin device by virtual method
@@ -101,7 +101,7 @@
 00000000000i[CD1   ] load cdrom with path=./dist/bullseye.iso
 00000000000i[CD1   ] Opening image file as a cd.
 00000000000i[HD    ] Media present in CD-ROM drive
-00000000000i[HD    ] Capacity is 5615 sectors (10.97 MB)
+00000000000i[HD    ] Capacity is 5618 sectors (10.97 MB)
 00000000000i[PLUGIN] init_dev of 'pci_ide' plugin device by virtual method
 00000000000i[DEV   ] PIIX3 PCI IDE controller present at device 1, function 1
 00000000000i[PLUGIN] init_dev of 'unmapped' plugin device by virtual method
@@ -198,5 +198,5 @@
 00000000000i[CPU0  ] | EIP=0000fff0 (0000fff0)
 00000000000i[CPU0  ] | CR0=0x60000010 CR2=0x00000000
 00000000000i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
-00000000000i[CMOS  ] Last time is 1531759362 (Mon Jul 16 12:42:42 2018)
+00000000000i[CMOS  ] Last time is 1531766799 (Mon Jul 16 14:46:39 2018)
 00000000000i[SIM   ] quit_sim called with exit code 0

@@ -5,7 +5,8 @@ export ASMFLAGS=-felf32
 export BOCHS=bochs
 export CC=$(ARCH)-gcc
 export CFLAGS=-std=gnu99 -ffreestanding -O2
-QEMU=qemu-system-i386 -d cpu_reset
+QEMU=qemu-system-i386
+#QEMU=qemu-system-i386 -d cpu_reset
 
 .PHONY: all clean qemu qemu-bin bochs
 

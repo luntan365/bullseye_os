@@ -108,6 +108,7 @@ section .text
         mov fs, ax
         mov gs, ax
 
+        extern isr_handler
         call isr_handler
 
         pop eax        ; reload the original data segment descriptor
