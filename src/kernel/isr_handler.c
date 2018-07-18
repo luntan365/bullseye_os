@@ -11,7 +11,7 @@ typedef struct
 
 void isr_handler(registers_t regs)
 {
-    //terminal_writestring("ISR");
+    printf("ISR: %d\n", regs.int_no);
     // TODO: Actually do something here
     //monitor_write("recieved interrupt: ");
     //monitor_write_dec(regs.int_no);

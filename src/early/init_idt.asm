@@ -16,14 +16,16 @@ ENDSTRUC
     mov eax, BASE
     and eax, 0xffff
     mov dword [ENTRY + IdtEntry.baseLow], eax; Base low
+
+    mov eax, BASE
+    shr eax, 16
+    and eax, 0xffff
+    mov [ENTRY + IdtEntry.baseHigh], eax ; Base high
+
+
     mov dword [ENTRY + IdtEntry.sel], 0x08; Selector
     mov byte [ENTRY + IdtEntry.always0], 0; Always zero
     mov byte [ENTRY + IdtEntry.flags], ( 0x8e | 0x60 ); flags
-
-    mov eax, BASE
-    shr eax, 26
-    and eax, 0xffff
-    mov [ENTRY + IdtEntry.baseHigh], eax ; Base high
 %endmacro
 
 %macro IDT_GATE 1
@@ -78,7 +80,7 @@ section .bss
 
 section .data
     idt_descriptor:
-        dw idt_end - idt_start - 1
+        dw (idt_end - idt_start) - 1
         dd idt_start
 
 section .text
@@ -131,8 +133,8 @@ section .text
         IRQ_GATE 13
         IRQ_GATE 14
         IRQ_GATE 15
-        mov eax, idt_descriptor
-        lidt [eax]
+
+        lidt [idt_descriptor]
 
         ; Remap the PIC
         ; https://en.wikibooks.org/wiki/X86_Assembly/Programmable_Interrupt_Controller#Remapping

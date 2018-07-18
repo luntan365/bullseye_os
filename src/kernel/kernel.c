@@ -118,6 +118,6 @@ void kernel_main(void)
 	outb(0x40, h);
 
 	terminal_writestring("Hm");
-	//asm volatile ("int $0x3");
+	asm volatile ("int $0x3");
 	asm volatile ("int $0x4");
 }

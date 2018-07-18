@@ -4,16 +4,22 @@ export ASM=nasm
 export ASMFLAGS=-felf32
 export BOCHS=bochs
 export CC=$(ARCH)-gcc
-export CFLAGS=-std=gnu99 -ffreestanding -O2 -I$(shell pwd)/include
+export CFLAGS=-std=gnu99 -ffreestanding -O2 -I$(shell pwd)/include \
+-I$(shell pwd)/third_party/musl-1.1.19/include \
+-L$(shell pwd)/third_party/build_musl/lib \
+-lc -lm
 QEMU=qemu-system-i386
 #QEMU=qemu-system-i386 -d cpu_reset
 
-.PHONY: all clean qemu qemu-bin bochs
+.PHONY: install all clean qemu qemu-bin bochs third_party
 
-all: dist/bullseye.iso
+all: third_party dist/bullseye.iso
+
+install: all
 
 clean:
 	rm -rf dist
+	rm -rf third_party/build_musl
 	find . -type f -name '*.o' -delete
 	find . -type f -name '*.a' -delete
 	find . -type f -name '*.bin' -delete
@@ -37,3 +43,6 @@ qemu: dist/bullseye.iso
 
 qemu-bin: src/bullseye.bin
 	$(QEMU) -kernel src/bullseye.bin
+
+third_party:
+	$(MAKE) -C third_party
