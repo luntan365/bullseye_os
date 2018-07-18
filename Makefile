@@ -4,10 +4,7 @@ export ASM=nasm
 export ASMFLAGS=-felf32
 export BOCHS=bochs
 export CC=$(ARCH)-gcc
-export CFLAGS=-std=gnu99 -ffreestanding -O2 -I$(shell pwd)/include \
--I$(shell pwd)/third_party/musl-1.1.19/include \
--L$(shell pwd)/third_party/build_musl/lib \
--lc -lm
+export CFLAGS=-std=gnu99 -ffreestanding -O2 -I$(shell pwd)/include -I$(shell pwd)/third_party/build_musl/include
 QEMU=qemu-system-i386
 #QEMU=qemu-system-i386 -d cpu_reset
 

@@ -12,6 +12,7 @@ kernel/libkernel.a:
 	$(MAKE) -C kernel
 
 bullseye.bin: bootloader/libbootloader.a early/libearly.a kernel/libkernel.a
-	$(CC) -T linker.ld -o bullseye.bin -ffreestanding -O2 -nostdlib \
+	$(CC) $(CFLAGS) -T linker.ld -o bullseye.bin -ffreestanding -O2 -nostdlib \
 	bootloader/libbootloader.a early/libearly.a kernel/libkernel.a \
-	-lgcc
+	-L$(shell pwd)/third_party/build_musl/lib \
+	-lc -lm -lgcc
